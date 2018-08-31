@@ -5,12 +5,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/config.js',
+  entry: './src/react1.js',
   output: {
-    filename: 'config.js',
-    library: 'config',
+    filename: 'react1.js',
+    library: 'react1',
     libraryTarget: 'amd',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build/react1'),
   },
   mode: 'production',
   module: {
@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: [path.resolve(__dirname, 'node_modules'), /\.krem.css$/],
+        exclude: [path.resolve(__dirname, 'node_modules')],
         use: [
           'style-loader',
           {
@@ -46,7 +46,6 @@ module.exports = {
       {
         test: /\.css$/,
         include: [path.resolve(__dirname, 'node_modules')],
-        exclude: [/\.krem.css$/],
         use: ['style-loader', 'css-loader'],
       },
     ],
@@ -66,7 +65,7 @@ module.exports = {
       {from: path.resolve(__dirname, 'src/index.html')},
       {from: path.resolve(__dirname, 'src/styles.css')},
     ]),
-    new CleanWebpackPlugin(['build']),
+    new CleanWebpackPlugin(['build/react1']),
   ],
   devtool: 'source-map',
   externals: [
