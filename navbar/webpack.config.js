@@ -5,12 +5,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/react1.js',
+  entry: path.resolve(__dirname, 'src/navbar.js'),
   output: {
-    filename: 'react1.js',
-    library: 'react1',
+    filename: 'navbar.js',
+    library: 'navbar',
     libraryTarget: 'amd',
-    path: path.resolve(__dirname, 'build/react1'),
+    path: path.resolve(__dirname, 'build/navbar'),
   },
   mode: 'production',
   module: {
@@ -22,12 +22,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: [path.resolve(__dirname, 'node_modules')],
+        exclude: [path.resolve(__dirname, 'node_modules'), /\.krem.css$/],
         use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
+              modules: true,
               localIdentName: '[path][name]__[local]',
             },
           },
@@ -46,7 +47,25 @@ module.exports = {
       {
         test: /\.css$/,
         include: [path.resolve(__dirname, 'node_modules')],
+        exclude: [/\.krem.css$/],
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.krem.css$/,
+        exclude: [path.resolve(__dirname, 'node_modules')],
+        use: [
+          {
+            loader: 'kremling-loader',
+            options: {
+              namespace: 'app-dashboard-ui',
+              postcss: {
+                plugins: {
+                  'autoprefixer': {}
+                }
+              }
+            },
+          },
+        ]
       },
     ],
   },
@@ -61,11 +80,10 @@ module.exports = {
       banner: '"format amd";',
       raw: true,
     }),
+    new CleanWebpackPlugin(['build/navbar']),
     CopyWebpackPlugin([
-      {from: path.resolve(__dirname, 'src/index.html')},
-      {from: path.resolve(__dirname, 'src/styles.css')},
+      {from: path.resolve(__dirname, 'src/navbar.js')}
     ]),
-    new CleanWebpackPlugin(['build/react1']),
   ],
   devtool: 'source-map',
   externals: [

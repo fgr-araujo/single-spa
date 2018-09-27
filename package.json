@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently --kill-others --kill-others-on-file -p name --names \"config,common-deps\" \"npm run start:config\" \"npm run start:common-deps\" ",
+    "start": "concurrently --kill-others --kill-others-on-file -p name --names \"config,common-deps,navbar\" \"npm run start:config\" \"npm run start:common-deps\" \"npm run start:navbar\"",
     "start:config": "webpack-dev-server --config ./webpack.config.config.dev.js --port 8233",
     "start:common-deps": "webpack-dev-server --config ./webpack.common-deps.config.dev.js --port 8234",
-    "build": "npm run build:config && npm run build:common-deps",
+    "start:navbar": "cd ./navbar/ && webpack-dev-server --config ./webpack.dev.js --port 8235",
+    "build": "npm run build:config && npm run build:common-deps && npm run build:navbar",
     "build:config": "webpack --config ./webpack.config.config.js -p",
-    "build:common-deps": "webpack --config ./webpack.common-deps.config.js -p"
+    "build:common-deps": "webpack --config ./webpack.common-deps.config.js -p",
+    "build:navbar": "cd ./navbar/ && webpack --config ./webpack.config.js -p"
   },
   "author": "Justin McMurdie",
   "license": "ISC",
