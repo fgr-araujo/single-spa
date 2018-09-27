@@ -56,3 +56,6 @@ body {
   color: var(--white);
 }
 
+.navBarHeight {
+  height: 60px;
+}

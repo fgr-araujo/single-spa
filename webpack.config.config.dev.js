@@ -18,6 +18,10 @@ config.devServer = {
       target: "http://localhost:8235",
       pathRewrite: {"^/navbar" : ""}
     },
+    "/people/": {
+      target: "http://localhost:8236",
+      pathRewrite: {"^/people" : ""}
+    },
   }
 }
 

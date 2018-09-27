@@ -1,6 +1,5 @@
 .root {
   background-color: var(--primary);
-  height: 60px;
   display: flex;
   align-items: center;
 }

@@ -7,7 +7,7 @@ export default class Root extends React.Component {
   render () {
     return (
       <Scoped postcss={styles}>
-        <div className='root'>
+        <div className='root navBarHeight'>
           {
             links.map((link) => {
               return (

@@ -1,7 +1,7 @@
 export const links = [
   {
-    name: 'App 1',
-    href: '/#/app1'
+    name: 'People',
+    href: '/#/people'
   },
   {
     name: 'App 2',
