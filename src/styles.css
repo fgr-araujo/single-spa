@@ -45,4 +45,14 @@
 
 body {
   margin: 0px;
+  --primary: #011627;
+  --background: #182B3A;
+  --white: #FDFFFC;
+  --blue: #2EC4B6;
+  --red: #E71D36;
+  --orange: #FF9F1C;
+  background-color: var(--background);
+  font-family: 'Roboto', sans-serif;
+  color: var(--white);
 }
+
