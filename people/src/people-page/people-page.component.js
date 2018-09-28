@@ -1,6 +1,8 @@
 import React, {Fragment} from 'react'
 import AsyncDecorator from 'async-decorator/rx6'
 import { Scoped } from 'kremling'
+import queryString from 'query-string'
+import { find } from 'lodash'
 import { getPeople } from '../utils/api.js'
 import styles from './people-page.krem.css'
 import PeopleList from '../people-list/people-list.component.js'
@@ -19,6 +21,7 @@ export default class PeoplePage extends React.Component {
 
   componentDidMount() {
     this.fetchPeople(this.state.pageNum)
+    this.selectPersonFromQueryParams()
   }
 
   render () {
@@ -64,6 +67,28 @@ export default class PeoplePage extends React.Component {
         </div>
       </Scoped>
     )
+  }
+
+  componentDidUpdate() {
+    this.selectPersonFromQueryParams()
+  }
+
+  selectPersonFromQueryParams = () => {
+    const search = this.props.location.search
+    const parsed = queryString.parse(search)
+    if (
+      (this.state.selectedPerson === undefined && parsed.selected !== undefined) || 
+      (this.state.selectedPerson && parsed && parsed.selected !== this.state.selectedPerson.name)
+    ) {
+      this.setState(prev => {
+        const found = find(prev.people, (person) => person.name === parsed.selected)
+        if (found !== undefined) {
+          return {selectedPerson: found}
+        } else {
+          return null
+        }
+      })
+    }
   }
 
   selectPerson = (arrayIndex) => {

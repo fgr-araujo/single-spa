@@ -1,10 +1,10 @@
 import React, {Fragment} from 'react'
-import AsyncDecorator from 'async-decorator/rx6'
 import { Scoped } from 'kremling'
 import { getPeople } from '../utils/api.js'
 import styles from './people-list.krem.css'
+import { withRouter } from 'react-router'
 
-@AsyncDecorator
+@withRouter
 export default class PeopleList extends React.Component {
 
   render () {
@@ -19,9 +19,7 @@ export default class PeopleList extends React.Component {
                   <a
                     key={person.name}
                     className='person'
-                    onClick={() => selectPerson(index)}
-                    onKeyPress={(evt) => this.onKeyPress(evt, index)}
-                    tabIndex={0}
+                    href={`#${this.props.match.path}?selected=${window.encodeURIComponent(person.name)}`}
                   >
                     {person.name}
                   </a>
