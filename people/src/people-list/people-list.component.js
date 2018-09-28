@@ -8,17 +8,18 @@ import styles from './people-list.krem.css'
 export default class PeopleList extends React.Component {
 
   render () {
-    const { people, loadingPeople } = this.props
+    const { people, loadingPeople, selectPerson } = this.props
     return (
       <Scoped postcss={styles}>
         <div className='peopleList'>
           <Fragment>
             {
-              people.map(person => {
+              people.map((person, index) => {
                 return (
                   <div
                     key={person.name}
                     className='person'
+                    onClick={() => selectPerson(index)}
                   >
                     {person.name}
                   </div>
