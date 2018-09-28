@@ -1,0 +1,17 @@
+.peoplePageContents {
+  display: flex;
+}
+
+.listWrapper {
+  width: 30%;
+}
+
+.selectedWrapper {
+  width: 70%;
+}
+
+.peoplePage {
+  padding-top: 24px;
+  padding-left: 24px;
+}
+

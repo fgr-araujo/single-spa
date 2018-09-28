@@ -1,5 +1,5 @@
 import React from 'react'
-import PeopleList from './people-list/people-list.component.js'
+import PeoplePage from './people-page/people-page.component.js'
 
 export default class Root extends React.Component {
 
@@ -18,7 +18,7 @@ export default class Root extends React.Component {
           Error
         </div>
       ) : (
-        <PeopleList />
+        <PeoplePage />
       )
     )
   }
