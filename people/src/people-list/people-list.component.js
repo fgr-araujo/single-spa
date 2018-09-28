@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import AsyncDecorator from 'async-decorator/rx6'
 import { Scoped } from 'kremling'
 import { getPeople } from '../utils/api.js'
@@ -26,6 +26,7 @@ export default class PeopleList extends React.Component {
           {
             nextPage ? (
               <button
+                className='brand-button margin-bottom-16'
                 onClick={this.fetchMore}
                 disabled={!this.state.nextPage || this.state.loadingPeople}
               >
@@ -33,20 +34,34 @@ export default class PeopleList extends React.Component {
               </button>
             ) : null
           }
-          <div>
-            People List
-          </div>
           {
-            people.map(person => {
-              return (
-                <div
-                  key={person.name}
-                  className='person'
-                >
-                  {person.name}
-                </div>
-              )
-            })
+            this.state.loadingPeople && people.length === 0 ? (
+              <div>
+                Loading ...
+              </div>
+            ) : (
+              <Fragment>
+                {
+                  people.map(person => {
+                    return (
+                      <div
+                        key={person.name}
+                        className='person'
+                      >
+                        {person.name}
+                      </div>
+                    )
+                  })
+                }
+                {
+                  loadingPeople && (
+                    <div>
+                      Loading ...
+                    </div>
+                  )
+                }
+              </Fragment>
+            )
           }
         </div>
       </Scoped>

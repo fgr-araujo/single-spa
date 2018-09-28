@@ -1,3 +1,8 @@
 .person {
   height: 50px;
 }
+
+.peopleList {
+  padding-top: 24px;
+  padding-left: 24px;
+}

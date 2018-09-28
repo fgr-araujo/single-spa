@@ -48,6 +48,7 @@ body {
   --primary: #011627;
   --background: #182B3A;
   --white: #FDFFFC;
+  --gray: #8B8C8A;
   --blue: #2EC4B6;
   --red: #E71D36;
   --orange: #FF9F1C;
@@ -58,4 +59,24 @@ body {
 
 .navBarHeight {
   height: 60px;
+}
+
+.brand-button {
+  background-color: var(--orange);
+  color: var(--white);
+  border-style: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px;
+  text-size: 100%;
+}
+
+.brand-button:disabled {
+  background-color: var(--primary);
+  cursor: not-allowed;
+  color: var(--gray);
+}
+
+.margin-bottom-16 {
+  margin-bottom: 16px;
 }
