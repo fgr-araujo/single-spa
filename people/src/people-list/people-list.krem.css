@@ -1,3 +1,15 @@
 .person {
   height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--white);
+  cursor: pointer;
+}
+
+.person:last-child {
+  border-bottom: none;
+}
+
+.person:first-child {
+  border-top: 1px solid var(--white);
 }

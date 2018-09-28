@@ -16,13 +16,15 @@ export default class PeopleList extends React.Component {
             {
               people.map((person, index) => {
                 return (
-                  <div
+                  <a
                     key={person.name}
                     className='person'
                     onClick={() => selectPerson(index)}
+                    onKeyPress={(evt) => this.onKeyPress(evt, index)}
+                    tabIndex={0}
                   >
                     {person.name}
-                  </div>
+                  </a>
                 )
               })
             }
@@ -37,5 +39,11 @@ export default class PeopleList extends React.Component {
         </div>
       </Scoped>
     )
+  }
+
+  onKeyPress = (evt, index) => {
+    if (evt.key === 'Enter' || evt.key === ' ') {
+      this.props.selectPerson(index)
+    }
   }
 }
