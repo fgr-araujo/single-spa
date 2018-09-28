@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
-import PeopleList from './people-list/people-list.component.js'
+import RootComponent from './root.component.js'
 
 const reactLifecycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: PeopleList,
+  rootComponent: RootComponent,
   domElementGetter,
 })
 

@@ -57,7 +57,7 @@ module.exports = {
           {
             loader: 'kremling-loader',
             options: {
-              namespace: 'app-dashboard-ui',
+              namespace: 'people',
               postcss: {
                 plugins: {
                   'autoprefixer': {}
