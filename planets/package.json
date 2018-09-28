@@ -1,0 +1,11 @@
+{
+  "name": "planets",
+  "version": "1.0.0",
+  "description": "A microservice about star wars planets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Justin McMurdie",
+  "license": "ISC"
+}

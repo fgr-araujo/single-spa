@@ -4,7 +4,7 @@ export const links = [
     href: '/#/people'
   },
   {
-    name: 'App 2',
-    href: '/#/app2'
+    name: 'Planets',
+    href: '/#/planets'
   }
 ]
