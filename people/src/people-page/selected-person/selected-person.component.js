@@ -12,7 +12,56 @@ export default class SelectedPerson extends React.Component {
           {
             selectedPerson !== undefined ? (
               <div>
-                {JSON.stringify(selectedPerson)}
+                <div className='personName'>
+                  <div className='personAttribute'>
+                    <div className='attributeTitle'>
+                      Name
+                    </div>
+                    <div>
+                      {selectedPerson.name}
+                    </div>
+                  </div>
+                </div>
+                <div className='personAttribute'>
+                  <div className='attributeTitle'>
+                    height
+                  </div>
+                  <div>
+                    {selectedPerson.height}
+                  </div>
+                </div>
+                <div className='personAttribute'>
+                  <div className='attributeTitle'>
+                    Mass
+                  </div>
+                  <div>
+                    {selectedPerson.mass}
+                  </div>
+                </div>
+                <div className='personAttribute'>
+                  <div className='attributeTitle'>
+                    Hair color
+                  </div>
+                  <div>
+                    {selectedPerson.hair_color}
+                  </div>
+                </div>
+                <div className='personAttribute'>
+                  <div className='attributeTitle'>
+                    Gender
+                  </div>
+                  <div>
+                    {selectedPerson.gender}
+                  </div>
+                </div>
+                <div className='personAttribute'>
+                  <div className='attributeTitle'>
+                    Birth Year
+                  </div>
+                  <div>
+                    {selectedPerson.birth_year}
+                  </div>
+                </div>
               </div>
             ) : (
               <div>
