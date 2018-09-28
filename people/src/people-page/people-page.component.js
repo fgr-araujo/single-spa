@@ -69,8 +69,10 @@ export default class PeoplePage extends React.Component {
     )
   }
 
-  componentDidUpdate() {
-    this.selectPersonFromQueryParams()
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.location.search !== prevProps.location.search) {
+      this.selectPersonFromQueryParams()
+    }
   }
 
   selectPersonFromQueryParams = () => {
