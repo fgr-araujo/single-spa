@@ -9,3 +9,7 @@ export function navbar(location) {
 export function people(location) {
   return hashPrefix(location, 'people')
 }
+
+export function planets(location) {
+  return hashPrefix(location, 'planets')
+}

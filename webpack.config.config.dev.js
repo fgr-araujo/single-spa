@@ -22,6 +22,10 @@ config.devServer = {
       target: "http://localhost:8236",
       pathRewrite: {"^/people" : ""}
     },
+    "/planets/": {
+      target: "http://localhost:8237",
+      pathRewrite: {"^/planets" : ""}
+    },
   }
 }
 
