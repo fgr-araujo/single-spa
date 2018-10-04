@@ -1,4 +1,19 @@
-.person {
+<template>
+  <a class="planet">
+    {{planet.name}}
+  </a>
+</template>
+
+<script>
+export default {
+  props: {
+    planet: Object
+  }
+}
+</script>
+
+<style scoped>
+.planet {
   height: 50px;
   display: flex;
   align-items: center;
@@ -8,10 +23,11 @@
   color: var(--white);
 }
 
-.person:last-child {
+.planet:last-child {
   border-bottom: none;
 }
 
-.person:first-child {
+.planet:first-child {
   border-top: 1px solid var(--white);
 }
+</style>
