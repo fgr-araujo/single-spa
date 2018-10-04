@@ -32,7 +32,6 @@ import SelectedPlanet from './selected-planet/selected-planet.vue'
     },
     methods: {
       updateSelectedPlanet: function (selectedPlanet) {
-        console.log('selectedPlanet', selectedPlanet)
         this.selectedPlanet = selectedPlanet
       }
     }
