@@ -1,13 +1,11 @@
 <template>
   <div id='planets'>
-    Heyo {{name}}
+    <transition name="fade" mode="out-in">
+      <router-view class="view"></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    name: 'app'
-  })
-}
+export default {}
 </script>
