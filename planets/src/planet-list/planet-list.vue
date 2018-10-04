@@ -8,13 +8,15 @@
       Fetch More planets
     </button>
     <div v-for='planet in planets'>
-      <planet v-bind:planet='planet'>
+      <planet
+        v-bind:planet='planet'
+        @selectPlanet='handlePlanetSelect'
+      >
       </planet>
     </div>
     <div v-if='loading'>
       Loading ...
     </div>
-
   </div>
 </template>
 
@@ -42,6 +44,9 @@ export default {
     Planet
   },
   methods: {
+    handlePlanetSelect: function (planet) {
+      this.$emit('selectPlanet', planet)
+    },
     fetchWithNum: function (page) {
       this.fetch(page)
     },

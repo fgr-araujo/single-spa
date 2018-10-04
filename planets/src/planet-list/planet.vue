@@ -1,5 +1,8 @@
 <template>
-  <a class="planet">
+  <a
+    class="planet"
+    v-on:click='handlePlanetSelect(planet)'
+  >
     {{planet.name}}
   </a>
 </template>
@@ -8,6 +11,12 @@
 export default {
   props: {
     planet: Object
+  },
+  methods: {
+    handlePlanetSelect: function (planet) {
+      console.log('planet', planet)
+      this.$emit('selectPlanet', planet)
+    },
   }
 }
 </script>

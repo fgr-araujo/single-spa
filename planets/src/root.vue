@@ -1,24 +1,40 @@
 <template>
   <div class="rootDiv">
     <div class='left'>
-      <planet-list>
+      <planet-list
+        v-on:selectPlanet='updateSelectedPlanet'
+      >
       </planet-list>
     </div>
     <div class='right'>
-      right
+      <selected-planet
+        v-bind:selectedPlanet='selectedPlanet'
+      >
+      </selected-planet>
     </div>
   </div>
 </template>
 
 <script>
 import PlanetList from './planet-list/planet-list.vue'
+import SelectedPlanet from './selected-planet/selected-planet.vue'
   export default {
     data: () => ({
       selectedPlanet: undefined,
       planets: []
     }),
     components: {
-      PlanetList
+      PlanetList,
+      SelectedPlanet
+    },
+    mounted: function () {
+
+    },
+    methods: {
+      updateSelectedPlanet: function (selectedPlanet) {
+        console.log('selectedPlanet', selectedPlanet)
+        this.selectedPlanet = selectedPlanet
+      }
     }
   }
 </script>
