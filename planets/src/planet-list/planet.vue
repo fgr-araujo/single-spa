@@ -1,10 +1,10 @@
 <template>
-  <a
+  <router-link
     class="planet"
-    v-on:click='handlePlanetSelect(planet)'
+    :to="{path: 'planets', query: {selected: planet.name}}"
   >
     {{planet.name}}
-  </a>
+  </router-link>
 </template>
 
 <script>
@@ -12,12 +12,6 @@ export default {
   props: {
     planet: Object
   },
-  methods: {
-    handlePlanetSelect: function (planet) {
-      console.log('planet', planet)
-      this.$emit('selectPlanet', planet)
-    },
-  }
 }
 </script>
 

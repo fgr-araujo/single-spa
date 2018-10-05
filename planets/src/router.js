@@ -1,8 +1,8 @@
 import VueRouter from 'vue-router'
-import RootComponent from './root.vue'
+import PlanetPage from './planet-page.vue'
 
 const routes = [
-  { path: '/planets', component: RootComponent}
+  { path: '/planets', component: PlanetPage}
 ]
 
 const router = new VueRouter({routes})
