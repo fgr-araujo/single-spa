@@ -1,9 +1,18 @@
 .films {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .film {
-  border: 2px solid var(--white);
-  width: 108px;
-  height: 162px;
+  width: 216px;
+  height: 384px;
+  margin: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filmPoster {
+  max-width: 100%;
+  max-height: 100%;
 }

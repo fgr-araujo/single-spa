@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react'
+import { imageMap } from './film.helpers.js'
 
 export default class Film extends React.Component {
 
@@ -6,7 +7,7 @@ export default class Film extends React.Component {
     const { film } = this.props
     return (
       <div className='film'>
-        {film.title}
+        <img className='filmPoster' src={imageMap[film.episode_id]} alt={film.title} />
       </div>
     )
   }
