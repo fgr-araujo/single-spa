@@ -127,7 +127,7 @@ export default class PeoplePage extends React.Component {
                 const people = [...prev.people, ...results.results]
                 const nextPage = !!results.next
                 return {people, nextPage, loadingPeople: false}
-              })
+              }, this.selectPersonFromQueryParams)
             },
             (err => {
               console.log('err', err)

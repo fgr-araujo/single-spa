@@ -78,6 +78,15 @@ body {
   color: var(--gray);
 }
 
+.brand-link {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.brand-link:visited {
+  color: var(--orange);
+}
+
 .margin-bottom-16 {
   margin-bottom: 16px;
 }

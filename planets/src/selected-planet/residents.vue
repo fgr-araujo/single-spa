@@ -10,7 +10,7 @@
       >
       <li v-for='resident in loadedResidents' class='resident'>
         <router-link
-          class='residentLink'
+          class='brand-link'
           :to="{path: 'people', query: {selected: resident.name}}"
           >
           {{resident.name}}
@@ -65,14 +65,6 @@ export default {
 </script>
 
 <style scoped>
-.residentLink {
-  text-decoration: none;
-  color: var(--blue);
-}
-.residentLink:visited {
-  color: var(--orange);
-}
-
 .residents {
   margin: 0px;
   padding: 0px;
