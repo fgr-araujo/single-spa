@@ -2,10 +2,10 @@
   <div class="rootDiv">
     <div class='left'>
       <planet-list
-        v-bind:loading='loading'
-        v-bind:next-page='nextPage'
-        v-bind:planets='planets'
-        v-on:fetchPlanets='fetch'
+        :loading='loading'
+        :next-page='nextPage'
+        :planets='planets'
+        @fetchPlanets='fetch'
       >
       </planet-list>
     </div>
