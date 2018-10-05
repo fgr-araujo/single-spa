@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently --kill-others --kill-others-on-file -p name --names \"config,common-deps,navbar,people,planets\" \"npm run start:config\" \"npm run start:common-deps\" \"npm run start:navbar\" \"npm run start:people\" \"npm run start:planets\" ",
+    "install-all": "npm run install:config && npm run install:navbar && npm run install:people && npm run install:planets",
+    "install:config": "npm i",
+    "install:navbar": "cd ./navbar/ && npm i",
+    "install:people": "cd ./people/ && npm i",
+    "install:planets": "cd ./planets/ && npm i",
+    "start": "concurrently --kill-others --kill-others-on-fail -p name --names \"config,common-deps,navbar,people,planets\" \"npm run start:config\" \"npm run start:common-deps\" \"npm run start:navbar\" \"npm run start:people\" \"npm run start:planets\" ",
     "start:config": "webpack-dev-server --config ./webpack.config.config.dev.js --port 8233",
     "start:common-deps": "webpack-dev-server --config ./webpack.common-deps.config.dev.js --port 8234",
     "start:navbar": "cd ./navbar/ && webpack-dev-server --config ./webpack.dev.js --port 8235",
