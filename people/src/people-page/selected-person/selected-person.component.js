@@ -28,7 +28,7 @@ export default class SelectedPerson extends React.Component {
                     height
                   </div>
                   <div>
-                    {selectedPerson.height}
+                    {this.formatHeight(selectedPerson.height)}
                   </div>
                 </div>
                 <div className='personAttribute'>
@@ -79,5 +79,9 @@ export default class SelectedPerson extends React.Component {
         </div>
       </Scoped>
     )
+  }
+
+  formatHeight = (heightInCm) => {
+    return `${heightInCm}cm (${heightInCm * 0.0328084}ft)`
   }
 }
