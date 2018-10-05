@@ -1,11 +1,14 @@
 
 <template>
   <div>
+    <div v-if='residents.length === 0'>
+      No notable residents
+    </div>
     <div v-if='residents.length !== loadedResidents.length && !error'>
       ... Loading
     </div>
     <ul
-      v-if='residents.length === loadedResidents.length'
+      v-if='residents.length === loadedResidents.length && residents.length !== 0'
       class='residents'
       >
       <li v-for='resident in loadedResidents' class='resident'>
@@ -35,17 +38,30 @@ export default {
   }),
   mounted: function () {
     this.subscriptions = []
-    this.residents.forEach((residentUrl) => {
-      const number = residentUrl.match(/[0-9]+/)
-      this.fetchResident(number)
-    })
+    this.resetThenFetch()
   },
   beforeDestroy: function () {
     this.subscriptions.forEach(cancelable => {
       cancelable.unsubscribe()
     })
   },
+  watch: {
+    residents: function() {
+      this.resetThenFetch()
+    }
+  },
   methods: {
+    resetThenFetch: function () {
+      this.loadedResidents = []
+      this.error = false
+      this.fetchResidents()
+    },
+    fetchResidents: function () {
+      this.residents.forEach((residentUrl) => {
+        const number = residentUrl.match(/[0-9]+/)
+        this.fetchResident(number)
+      })
+    },
     fetchResident: function (number) {
       this.subscriptions.push(
         getPerson(number).subscribe(
