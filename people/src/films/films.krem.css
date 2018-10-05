@@ -1,0 +1,9 @@
+.films {
+  display: flex;
+}
+
+.film {
+  border: 2px solid var(--white);
+  width: 108px;
+  height: 162px;
+}
