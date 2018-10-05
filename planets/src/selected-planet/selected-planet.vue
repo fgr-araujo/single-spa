@@ -49,6 +49,15 @@
           {{selectedPlanet.terrain}}
         </div>
       </div>
+      <div class='planetAttribute'>
+        <div class='attributeTitle'>
+          Notable Residents
+        </div>
+        <div class='attribute'>
+          <residents v-bind:residents='selectedPlanet.residents'>
+          </residents>
+        </div>
+      </div>
     </div>
     <div class="selectedPlanet" v-if='!selectedPlanet'>
       No planet selected
@@ -57,13 +66,17 @@
 </template>
 
 <script>
+import Residents from './residents.vue'
 export default {
+  components: {
+    Residents,
+  },
   props: {
     selectedPlanet: Object
   },
   filters: {
     formatPopulation: function (value) {
-      if(!value) {
+      if(value === undefined) {
         return ''
       } else {
         const parsedValue = parseInt(value)
@@ -75,7 +88,16 @@ export default {
       }
     },
     formatDiameter: function (value) {
-      return `${value} Kilometers (${value * 0.621371} Miles)`
+      if (value === undefined) {
+        return ''
+      } else {
+        const parsedValue = parseInt(value)
+        if (isNaN(parsedValue)) {
+          return value
+        } else {
+          return `${value} Kilometers (${value * 0.621371} Miles)`
+        }
+      }
     }
   }
 }

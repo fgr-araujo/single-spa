@@ -16,3 +16,13 @@ export function getPlanets(pageNum = 1) {
     pluck('data')
   )
 }
+
+export function getPerson(peronNumber) {
+  return from(
+    axiosInstance.get(
+      `people/${peronNumber}/`
+    )
+  ).pipe(
+    pluck('data')
+  )
+}
