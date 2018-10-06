@@ -2,6 +2,7 @@ import React, {Fragment} from 'react'
 import { Scoped } from 'kremling'
 import styles from './selected-person.krem.css'
 import Homeworld from './homeworld.component.js'
+import Films from '../../films/films.component.js'
 
 export default class SelectedPerson extends React.Component {
 
@@ -68,6 +69,12 @@ export default class SelectedPerson extends React.Component {
                     Homeworld
                   </div>
                   <Homeworld homeworld={selectedPerson.homeworld} />
+                </div>
+                <div className='personAttribute'>
+                  <div className='attributeTitle'>
+                    Films
+                  </div>
+                  <Films films={selectedPerson.films} />
                 </div>
               </div>
             ) : (
