@@ -10,17 +10,17 @@
       </planet-list>
     </div>
     <div class='right'>
-      <selected-planet
+      <maybe-selected
         v-bind:selectedPlanet='selectedPlanet'
       >
-      </selected-planet>
+      </maybe-selected>
     </div>
   </div>
 </template>
 
 <script>
 import PlanetList from './planet-list/planet-list.vue'
-import SelectedPlanet from './selected-planet/selected-planet.vue'
+import MaybeSelected from './selected-planet/maybe-selected.vue'
 import { getPlanets } from './utils/api.js'
 import { find } from 'lodash'
 export default {
@@ -31,7 +31,7 @@ export default {
   }),
   components: {
     PlanetList,
-    SelectedPlanet
+    MaybeSelected,
   },
   mounted: function () {
     this.subscriptions = []

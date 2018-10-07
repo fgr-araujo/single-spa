@@ -1,66 +1,62 @@
 <template>
   <div>
-    <div class="selectedPlanet" v-if='!!selectedPlanet'>
-      <div class='planetAttribute'>
-        <div class='attributeTitle'>
-          Name
-        </div>
-        <div class='attribute'>
-          {{selectedPlanet.name}}
-        </div>
+    <div class='planetAttribute'>
+      <div class='attributeTitle'>
+        Name
       </div>
-      <div class='planetAttribute'>
-        <div class='attributeTitle'>
-          Climate
-        </div>
-        <div class='attribute'>
-          {{selectedPlanet.climate}}
-        </div>
-      </div>
-      <div class='planetAttribute'>
-        <div class='attributeTitle'>
-          Diameter
-        </div>
-        <div class='attribute'>
-          {{ selectedPlanet.diameter | formatDiameter }}
-        </div>
-      </div>
-      <div class='planetAttribute'>
-        <div class='attributeTitle'>
-          Gravity
-        </div>
-        <div class='attribute'>
-          {{selectedPlanet.gravity}}
-        </div>
-      </div>
-      <div class='planetAttribute'>
-        <div class='attributeTitle'>
-          Population
-        </div>
-        <div class='attribute'>
-          {{ selectedPlanet.population | formatPopulation }}
-        </div>
-      </div>
-      <div class='planetAttribute'>
-        <div class='attributeTitle'>
-          Terrain
-        </div>
-        <div class='attribute'>
-          {{selectedPlanet.terrain}}
-        </div>
-      </div>
-      <div class='planetAttribute'>
-        <div class='attributeTitle'>
-          Notable Residents
-        </div>
-        <div class='attribute'>
-          <residents v-bind:residents='selectedPlanet.residents'>
-          </residents>
-        </div>
+      <div class='attribute'>
+        {{selectedPlanet.name}}
       </div>
     </div>
-    <div class="selectedPlanet" v-if='!selectedPlanet'>
-      No planet selected
+    <div class='planetAttribute'>
+      <div class='attributeTitle'>
+        Climate
+      </div>
+      <div class='attribute'>
+        {{selectedPlanet.climate}}
+      </div>
+    </div>
+    <div class='planetAttribute'>
+      <div class='attributeTitle'>
+        Diameter
+      </div>
+      <div class='attribute'>
+        {{ selectedPlanet.diameter | formatDiameter }}
+      </div>
+    </div>
+    <div class='planetAttribute'>
+      <div class='attributeTitle'>
+        Gravity
+      </div>
+      <div class='attribute'>
+        {{selectedPlanet.gravity}}
+      </div>
+    </div>
+    <div class='planetAttribute'>
+      <div class='attributeTitle'>
+        Population
+      </div>
+      <div class='attribute'>
+        {{ selectedPlanet.population | formatPopulation }}
+      </div>
+    </div>
+    <div class='planetAttribute'>
+      <div class='attributeTitle'>
+        Terrain
+      </div>
+      <div class='attribute'>
+        {{selectedPlanet.terrain}}
+      </div>
+    </div>
+    <div class='planetAttribute'>
+      <div class='attributeTitle'>
+        Notable Residents
+      </div>
+      <div class='attribute'>
+        <residents v-bind:residents='selectedPlanet.residents'>
+        </residents>
+      </div>
+    </div>
     </div>
   </div>
 </template>
