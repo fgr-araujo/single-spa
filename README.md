@@ -11,3 +11,8 @@ npm 6.1.0
 2. Run `npm run install-all`
 3. run `npm start`
 4. Open running code at `http://localhost:8233/`
+
+## Current applications
+1. People (written in react)
+2. Planets (written in vue)
+3. Navigation (written in react)
