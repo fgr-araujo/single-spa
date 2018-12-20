@@ -5,12 +5,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/fetcher.js'),
+  entry: path.resolve(__dirname, 'src/fetchWithCache.js'),
   output: {
-    filename: 'fetcher.js',
-    library: 'fetcher',
+    filename: 'fetchWithCache.js',
+    library: 'fetchWithCache',
     libraryTarget: 'amd',
-    path: path.resolve(__dirname, 'build/fetcher'),
+    path: path.resolve(__dirname, 'build/fetchWithCache'),
   },
   mode: 'production',
   module: {
@@ -80,9 +80,9 @@ module.exports = {
       banner: '"format amd";',
       raw: true,
     }),
-    new CleanWebpackPlugin(['build/fetcher']),
+    new CleanWebpackPlugin(['build/fetchWithCache']),
     CopyWebpackPlugin([
-      {from: path.resolve(__dirname, 'src/fetcher.js')}
+      {from: path.resolve(__dirname, 'src/fetchWithCache.js')}
     ]),
   ],
   devtool: 'source-map',

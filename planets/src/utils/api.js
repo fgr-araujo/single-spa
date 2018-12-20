@@ -1,4 +1,4 @@
-import fetchWithCache from 'fetcher!sofe'
+import fetchWithCache from 'fetchWithCache!sofe'
 
 export function getPlanets(pageNum = 1) {
   return fetchWithCache(
