@@ -39,5 +39,12 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new CleanWebpackPlugin(['build/planets']),
-  ]
+  ],
+  devtool: 'source-map',
+  externals: [
+    /^.+!sofe$/,
+    /^lodash$/,
+    /^single-spa$/,
+    /^rxjs\/?.*$/,
+  ],
 }

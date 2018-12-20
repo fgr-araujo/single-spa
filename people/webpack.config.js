@@ -87,6 +87,7 @@ module.exports = {
   ],
   devtool: 'source-map',
   externals: [
+    /^.+!sofe$/,
     /^lodash$/,
     /^single-spa$/,
     /^rxjs\/?.*$/,
