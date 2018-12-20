@@ -16,6 +16,9 @@ registerDep('rxjs', () => require('rxjs'))
 registerDep('rxjs/operators', () => require('rxjs/operators'))
 
 registerDep('single-spa', () => require('single-spa'))
+registerDep('react', () => require('react'))
+registerDep('react-dom', () => require('react-dom'))
+registerDep('react-dom/server', () => require('react-dom/server'))
 
 // A "requirer" is a function that requires a module. It is not called until
 // a sofe service needs the dependency. This prevents the code from being executed

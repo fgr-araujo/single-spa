@@ -91,6 +91,10 @@ module.exports = {
     /^lodash$/,
     /^single-spa$/,
     /^rxjs\/?.*$/,
+    /^react$/,
+    /^react\/lib.*/,
+    /^react-dom$/,
+    /.*react-dom.*/,
   ],
 };
 
