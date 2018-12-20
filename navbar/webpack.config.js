@@ -92,7 +92,8 @@ module.exports = {
     /^react$/,
     /^react\/lib.*/,
     /^react-dom$/,
-    /.*react-dom.*/,   /^rxjs\/?.*$/,
+    /.*react-dom.*/,
+    /^rxjs\/?.*$/,
   ],
 };
 

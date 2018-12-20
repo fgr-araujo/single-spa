@@ -80,10 +80,10 @@ export default class PeoplePage extends React.Component {
     const parsed = queryString.parse(search)
     if (
       (this.state.selectedPerson === undefined && parsed.selected !== undefined) || 
-      (this.state.selectedPerson && parsed && parsed.selected !== this.state.selectedPerson.name)
+      (this.state.selectedPerson && parsed && parsed.selected !== this.state.selectedPerson.id)
     ) {
       this.setState(prev => {
-        const found = find(prev.people, (person) => person.name === parsed.selected)
+        const found = find(prev.people, (person) => person.id === parsed.selected)
         if (found !== undefined) {
           return {selectedPerson: found}
         } else {

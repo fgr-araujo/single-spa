@@ -19,7 +19,7 @@ export default class PeopleList extends React.Component {
                   <a
                     key={person.name}
                     className='person'
-                    href={`#${this.props.match.path}?selected=${window.encodeURIComponent(person.name)}`}
+                    href={`#${this.props.match.path}?selected=${window.encodeURIComponent(person.id)}`}
                   >
                     {person.name}
                   </a>

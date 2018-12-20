@@ -1,6 +1,7 @@
 import { from, pipe } from 'rxjs'
-import { pluck, tap } from 'rxjs/operators'
+import { pluck, tap, map } from 'rxjs/operators'
 import axios from 'axios'
+import addId from './addId.js'
 
 const axiosInstance = axios.create({
   baseURL: 'https://swapi.co/api/',
@@ -25,6 +26,19 @@ export default function fetchWithCache(url, axiosOptions) {
     axiosInstance(options)
   ).pipe(
     pluck('data'),
+    map((response) => {
+      const id = addId(response)
+      if (id) {
+        return {id, ...response}
+      } else if(response.results) {
+        return {...response, results: response.results.map((result) => {
+          const id = addId(result)
+          return {id, ...result}
+        })}
+      } else {
+        return response
+      }
+    }),
     tap((response) => {
       cache[options.url] = {
         lastPulled: Date.now(),
@@ -33,11 +47,14 @@ export default function fetchWithCache(url, axiosOptions) {
       if (response.results && Array.isArray(response.results)) {
         response.results.forEach((item) => {
           if (item.url) {
-            cache[item.url] = item
+            cache[item.url] = {
+              lastPulled: Date.now(),
+              value: item,
+            }
           }
         })
       }
-    })
+    }),
   )
 }
 

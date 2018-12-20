@@ -41,7 +41,7 @@ export default {
   computed: {
     selectedPlanet: function () {
       const selected = this.$route.query.selected
-      const found = find(this.planets, (planet) => planet.name === selected)
+      const found = find(this.planets, (planet) => planet.id === selected)
       if (found !== undefined) {
         return found
       }
