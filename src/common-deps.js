@@ -4,6 +4,11 @@ import * as singleSpa from 'single-spa'
 
 window._ = lodash
 
+SystemJS.config(window.sofeManifest)
+
+// register sofe
+registerDep('sofe', () => require('sofe'))
+
 registerDep('lodash', () => require('lodash'))
 
 // See https://rxjs-dev.firebaseapp.com/guide/v6/migration for Import Paths explanation

@@ -5,12 +5,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/people.js'),
+  entry: path.resolve(__dirname, 'src/fetchWithCache.js'),
   output: {
-    filename: 'people.js',
-    library: 'people',
+    filename: 'fetchWithCache.js',
+    library: 'fetchWithCache',
     libraryTarget: 'amd',
-    path: path.resolve(__dirname, 'build/people'),
+    path: path.resolve(__dirname, 'build/fetchWithCache'),
   },
   mode: 'production',
   module: {
@@ -57,7 +57,7 @@ module.exports = {
           {
             loader: 'kremling-loader',
             options: {
-              namespace: 'people',
+              namespace: 'app-dashboard-ui',
               postcss: {
                 plugins: {
                   'autoprefixer': {}
@@ -80,16 +80,13 @@ module.exports = {
       banner: '"format amd";',
       raw: true,
     }),
-    new CleanWebpackPlugin(['build/people']),
+    new CleanWebpackPlugin(['build/fetchWithCache']),
     CopyWebpackPlugin([
-      {from: path.resolve(__dirname, 'src/people.js')}
+      {from: path.resolve(__dirname, 'src/fetchWithCache.js')}
     ]),
   ],
   devtool: 'source-map',
   externals: [
-    /^.+!sofe$/,
-    /^lodash$/,
-    /^single-spa$/,
     /^rxjs\/?.*$/,
   ],
 };
