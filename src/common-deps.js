@@ -4,7 +4,7 @@ import * as singleSpa from 'single-spa'
 
 window._ = lodash
 
-SystemJS.config(sofeManifest)
+SystemJS.config(window.sofeManifest)
 
 // register sofe
 registerDep('sofe', () => require('sofe'))
