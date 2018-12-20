@@ -13,19 +13,7 @@ config.devServer = {
     "/common/": {
       target: "http://localhost:8234",
       pathRewrite: {"^/common" : ""}
-    },
-    "/navbar/": {
-      target: "http://localhost:8235",
-      pathRewrite: {"^/navbar" : ""}
-    },
-    "/people/": {
-      target: "http://localhost:8236",
-      pathRewrite: {"^/people" : ""}
-    },
-    "/planets/": {
-      target: "http://localhost:8237",
-      pathRewrite: {"^/planets" : ""}
-    },
+    }
   }
 }
 
