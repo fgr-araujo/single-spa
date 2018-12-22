@@ -56,7 +56,7 @@ export default class Homeworld extends React.Component {
           homeworld && (
             <a
               className='brand-link'
-              href={`#/planets?selected=${window.encodeURIComponent(homeworld.id)}`}
+              href={`/planets?selected=${window.encodeURIComponent(homeworld.id)}`}
             >
               {homeworld.name}
             </a>

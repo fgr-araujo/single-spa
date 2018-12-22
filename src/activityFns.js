@@ -1,5 +1,5 @@
-export function hashPrefix(location, ...prefixes) {
-  return prefixes.some(prefix => location.hash.indexOf(`#/${prefix}`) === 0);
+export function prefix(location, ...prefixes) {
+  return prefixes.some(prefix => location.pathname.indexOf(`${location.origin}/${prefix}`))
 }
 
 export function navbar(location) {
@@ -7,9 +7,9 @@ export function navbar(location) {
 }
 
 export function people(location) {
-  return hashPrefix(location, 'people')
+  return prefix(location, 'people')
 }
 
 export function planets(location) {
-  return hashPrefix(location, 'planets')
+  return prefix(location, 'planets')
 }

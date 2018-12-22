@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import PeoplePage from './people-page/people-page.component.js'
 
 export default class Root extends React.Component {
@@ -19,12 +19,12 @@ export default class Root extends React.Component {
           Error
         </div>
       ) : (
-        <HashRouter>
+        <BrowserRouter>
           <Route
             path='/people'
             component={PeoplePage}
           />
-        </HashRouter>
+        </BrowserRouter>
       )
     )
   }
