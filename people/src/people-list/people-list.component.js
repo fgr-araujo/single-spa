@@ -3,6 +3,7 @@ import { Scoped } from 'kremling'
 import { getPeople } from '../utils/api.js'
 import styles from './people-list.krem.css'
 import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom'
 
 @withRouter
 export default class PeopleList extends React.Component {
@@ -16,13 +17,13 @@ export default class PeopleList extends React.Component {
             {
               people.map((person, index) => {
                 return (
-                  <a
+                  <Link
                     key={person.name}
                     className='person'
-                    href={`${this.props.match.path}?selected=${window.encodeURIComponent(person.id)}`}
+                    to={`${this.props.match.path}?selected=${window.encodeURIComponent(person.id)}`}
                   >
                     {person.name}
-                  </a>
+                  </Link>
                 )
               })
             }
