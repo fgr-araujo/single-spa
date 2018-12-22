@@ -2,6 +2,7 @@ import React from 'react'
 import { Scoped } from 'kremling'
 import styles from './root.krem.css'
 import { links } from './root.helper.js'
+import { Link } from '@reach/router'
 
 export default class Root extends React.Component {
 
@@ -26,18 +27,17 @@ export default class Root extends React.Component {
               {
                 links.map((link) => {
                   return (
-                    <a
+                    <Link
                       key={link.href}
                       className='primary-navigation-link'
-                      href={link.href}
+                      to={link.href}
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   )
                 })
               }
             </div>
-
           )
         }
       </Scoped>

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@reach/router": "1.2.1",
     "kremling": "1.0.4",
     "react-router": "4.3.1",
     "single-spa-react": "2.8.1"

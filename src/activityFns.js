@@ -1,5 +1,9 @@
 export function prefix(location, ...prefixes) {
-  return prefixes.some(prefix => location.pathname.indexOf(`${location.origin}/${prefix}`))
+  return prefixes.some(
+    prefix => (
+      location.href.indexOf(`${location.origin}/${prefix}`) !== -1
+    )
+  )
 }
 
 export function navbar(location) {
