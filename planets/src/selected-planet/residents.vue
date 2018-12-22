@@ -14,7 +14,7 @@
       <li v-for='resident in loadedResidents' class='resident'>
         <router-link
           class='brand-link'
-          :to="{path: 'people', query: {selected: resident.name}}"
+          :to="{path: 'people', query: {selected: resident.id}}"
           >
           {{resident.name}}
         </router-link>
