@@ -10,7 +10,6 @@
       </planet-list>
     </div>
     <div class='right'>
-      <div>Planet {{ $route.params.id }}</div>
       <maybe-selected
         v-bind:selectedPlanet='selectedPlanet'
       >
@@ -41,7 +40,7 @@ export default {
   },
   computed: {
     selectedPlanet: function () {
-      const selected = this.$route.query.selected
+      const selected = this.$route.params.id
       const found = find(this.planets, (planet) => planet.id === selected)
       if (found !== undefined) {
         return found

@@ -1,5 +1,7 @@
 import VueRouter from 'vue-router'
 import PlanetPage from './planet-page.vue'
+import Attributes from './selected-planet/info-tabs/attributes.vue'
+import People from './selected-planet/info-tabs/people.vue'
 
 const routes = [
   {
@@ -9,6 +11,20 @@ const routes = [
   {
     path: '/planets/:id',
     component: PlanetPage,
+    children: [
+      {
+        name: 'attributes',
+        path: 'attributes',
+        component: Attributes,
+        props: true,
+      },
+      {
+        name: 'people',
+        path: 'people',
+        component: People,
+        props: true,
+      }
+    ]
   }
 ]
 
