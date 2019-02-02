@@ -3,6 +3,7 @@
     <div class='tabs'>
       <router-link
         class='tabLink'
+        active-class='active'
         :to="{name: 'attributes', params: {selectedPlanet:selectedPlanet}}"
         >
         <div>
@@ -11,19 +12,19 @@
       </router-link>
       <router-link
         class='tabLink'
+        active-class='active'
         :to="{name: 'people', params: {selectedPlanet:selectedPlanet}}"
         >
         <div>
           People
         </div>
       </router-link>
-      <div>
-        Films
-      </div>
     </div>
-    <router-view>
+    <div class='infoBlock'>
+      <router-view>
 
-    </router-view>
+      </router-view>
+    </div>
   </div>
 </template>
 
@@ -41,8 +42,20 @@ export default {
   font-size: 32px;
 }
 .tabLink {
-  background-color: var(--gray);
   padding: 4px 8px;
-
+  text-decoration: none;
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: none;
+}
+.tabLink.active {
+  background-color: var(--white);
+  color: var(--background);
+}
+.infoBlock {
+  background-color: var(--white);
+  color: var(--background);
+  padding: 16px;
 }
 </style>

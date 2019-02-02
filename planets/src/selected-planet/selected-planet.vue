@@ -1,7 +1,9 @@
 <template>
   <div>
-    <Header v-bind:selectedPlanet='selectedPlanet'>
-    </Header>
+    <div class='margin-bottom-16'>
+      <Header v-bind:selectedPlanet='selectedPlanet'>
+      </Header>
+    </div>
     <InfoTabs v-bind:selectedPlanet='selectedPlanet'>
     </InfoTabs>
   </div>
