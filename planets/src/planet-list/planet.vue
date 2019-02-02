@@ -1,7 +1,8 @@
 <template>
   <router-link
     class="planet"
-    :to="{path: 'planets', query: {selected: planet.id}}"
+    :to="`/${planet.id}`"
+    append
   >
     {{planet.name}}
   </router-link>
