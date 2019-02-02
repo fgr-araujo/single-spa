@@ -10,6 +10,7 @@
       </planet-list>
     </div>
     <div class='right'>
+      <div>Planet {{ $route.params.id }}</div>
       <maybe-selected
         v-bind:selectedPlanet='selectedPlanet'
       >
@@ -21,7 +22,6 @@
 <script>
 import PlanetList from './planet-list/planet-list.vue'
 import MaybeSelected from './selected-planet/maybe-selected.vue'
-import Nested from './nested/nested.vue'
 import { getPlanets } from './utils/api.js'
 import { find } from 'lodash'
 export default {
