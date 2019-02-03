@@ -3,6 +3,7 @@ import AsyncDecorator from 'async-decorator/rx6'
 import { getPlanet } from '../../utils/api.js'
 import { pipe, from } from 'rxjs'
 import { flatMap, tap } from 'rxjs/operators'
+import { Link } from 'react-router-dom'
 
 @AsyncDecorator
 export default class Homeworld extends React.Component {
@@ -54,12 +55,12 @@ export default class Homeworld extends React.Component {
         }
         {
           homeworld && (
-            <a
+            <Link
               className='brand-link'
-              href={`/planets?selected=${window.encodeURIComponent(homeworld.id)}`}
+              to={`/planets/${homeworld.id}/attributes`}
             >
               {homeworld.name}
-            </a>
+            </Link>
 
           )
         }

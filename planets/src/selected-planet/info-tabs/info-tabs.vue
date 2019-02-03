@@ -21,8 +21,7 @@
       </router-link>
     </div>
     <div class='infoBlock'>
-      <router-view>
-
+      <router-view :selectedPlanet='selectedPlanet'>
       </router-view>
     </div>
   </div>
