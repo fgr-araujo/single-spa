@@ -19,6 +19,15 @@
           People
         </div>
       </router-link>
+      <router-link
+        class='tabLink'
+        active-class='active'
+        :to="{name: 'todo'}"
+        >
+        <div>
+          Todo
+        </div>
+      </router-link>
     </div>
     <div class='infoBlock'>
       <router-view :selectedPlanet='selectedPlanet'>

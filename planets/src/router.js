@@ -2,6 +2,7 @@ import VueRouter from 'vue-router'
 import PlanetPage from './planet-page.vue'
 import Attributes from './selected-planet/info-tabs/attributes.vue'
 import People from './selected-planet/info-tabs/people.vue'
+import Todo from './todo/todo.vue'
 
 const routes = [
   {
@@ -23,6 +24,11 @@ const routes = [
         path: 'people',
         component: People,
         props: true,
+      },
+      {
+        name: 'todo',
+        path: 'todo',
+        component: Todo,
       }
     ]
   }
