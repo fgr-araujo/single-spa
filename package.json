@@ -30,18 +30,18 @@
   "author": "Justin McMurdie",
   "license": "ISC",
   "dependencies": {
-    "lodash": "4.17.10",
+    "lodash": "^4.17.11",
     "react": "16.7.0",
     "react-dom": "16.7.0",
     "rxjs": "6.2.2",
     "single-spa": "4.0.1",
     "sofe": "2.1.4",
-    "systemjs": "0.20.19"
+    "systemjs": "^3.1.1"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0",
+    "@babel/core": "^7.4.3",
     "@babel/plugin-syntax-dynamic-import": "7.0.0",
-    "@babel/preset-env": "7.0.0",
+    "@babel/preset-env": "^7.4.3",
     "babel-core": "6.26.3",
     "babel-loader": "8.0.0",
     "clean-webpack-plugin": "0.1.19",

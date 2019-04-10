@@ -76,10 +76,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.BannerPlugin({
-      banner: '"format amd";',
-      raw: true,
-    }),
     new CleanWebpackPlugin(['build/fetchWithCache']),
     CopyWebpackPlugin([
       {from: path.resolve(__dirname, 'src/fetchWithCache.js')}

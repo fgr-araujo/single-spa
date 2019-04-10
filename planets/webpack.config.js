@@ -14,6 +14,7 @@ module.exports = {
   mode: 'production',
   module: {
     rules: [
+      {parser: {System: false}},
       {
         test: /\.vue$/,
         loader: 'vue-loader'
@@ -33,10 +34,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.BannerPlugin({
-      banner: '"format amd";',
-      raw: true,
-    }),
     new VueLoaderPlugin(),
     new CleanWebpackPlugin(['build/planets']),
   ],

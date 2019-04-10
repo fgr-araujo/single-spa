@@ -7,25 +7,28 @@
   </head>
   <body>
 
-    <script>
-      window.sofeManifest = {
-        sofe: {
-          manifest: {
-            "navbar": "http://localhost:8235/navbar.js",
-            "people": "http://localhost:8236/people.js",
-            "planets": "http://localhost:8237/planets.js",
-            "fetchWithCache": "http://localhost:8238/fetchWithCache.js",
-          }
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "config!sofe": "http://localhost:8233/config.js",
+          "navbar!sofe": "http://localhost:8235/navbar.js",
+          "people!sofe": "http://localhost:8236/people.js",
+          "planets!sofe": "http://localhost:8237/planets.js",
+          "fetchWithCache!sofe": "http://localhost:8238/fetchWithCache.js"
         }
       }
     </script>
+    <script src='https://unpkg.com/systemjs@3.1.1/dist/system.js'></script>
+    <script src='https://unpkg.com/systemjs@3.1.1/dist/extras/amd.js'></script>
+    <script src='https://unpkg.com/systemjs@3.1.1/dist/extras/named-register.js'></script>
+    <script src='https://unpkg.com/systemjs@3.1.1/dist/extras/named-exports.js'></script>
 
     <!-- Load the common deps-->
-    <script src="http://localhost:8233/common/common-deps.js"></script>
+    <script src="http://localhost:8234/common-deps.js"></script>
 
     <!-- Load the application -->
     <script>
-      SystemJS.import('http://localhost:8233/config.js')
+      System.import('config!sofe')
     </script>
 
     <!-- Static navbar -->

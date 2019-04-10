@@ -23,7 +23,6 @@ module.exports = {
       // This is usually when there is a preminified file that the npm package publishes but webpack doesn't know
       // it should use.
       lodash: path.resolve(__dirname, 'node_modules/lodash/lodash.min.js'),
-      systemjs: path.resolve(__dirname, 'node_modules/systemjs/dist/system.js'),
     }
   },
   devtool: 'sourcemap',
@@ -35,6 +34,7 @@ module.exports = {
   ],
   module: {
     rules: [
+      {parser: {System: false}},
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,

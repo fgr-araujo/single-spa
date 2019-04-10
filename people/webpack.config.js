@@ -15,6 +15,7 @@ module.exports = {
   mode: 'production',
   module: {
     rules: [
+      {parser: {System: false}},
       {
         test: /\.js?$/,
         exclude: [path.resolve(__dirname, 'node_modules')],
@@ -76,10 +77,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.BannerPlugin({
-      banner: '"format amd";',
-      raw: true,
-    }),
     new CleanWebpackPlugin(['build/people']),
     CopyWebpackPlugin([
       {from: path.resolve(__dirname, 'src/people.js')}

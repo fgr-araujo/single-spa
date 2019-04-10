@@ -15,6 +15,7 @@ module.exports = {
   mode: 'production',
   module: {
     rules: [
+      {parser: {System: false}},
       {
         test: /\.js?$/,
         exclude: [path.resolve(__dirname, 'node_modules')],
@@ -58,10 +59,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.BannerPlugin({
-      banner: '"format amd";',
-      raw: true,
-    }),
     CopyWebpackPlugin([
       {from: path.resolve(__dirname, 'src/index.html')},
       {from: path.resolve(__dirname, 'src/styles.css')},
