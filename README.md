@@ -5,8 +5,7 @@ applications to work in concert in a unified experience.
 
 ## Technologies
 1. [single-spa](https://single-spa.js.org/)
-2. [sofe](https://github.com/CanopyTax/sofe)
-3. [SystemJS](https://github.com/systemjs/systemjs)
+2. [SystemJS](https://github.com/systemjs/systemjs)
 
 ## Versions of node/npm
 Node v8.10.0
