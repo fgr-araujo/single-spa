@@ -1,24 +1,42 @@
 window.SystemJS = window.System
 
-import lodash from 'lodash'
-import * as singleSpa from 'single-spa'
+function insertNewImportMap(newMapJSON) {
+  const newScript = document.createElement('script')
+  newScript.type = 'systemjs-importmap'
+  newScript.text = JSON.stringify(newMapJSON)
+  const allMaps = document.querySelectorAll('script[type="systemjs-importmap"]')
 
-window._ = lodash
+  allMaps[allMaps.length - 1].insertAdjacentElement(
+    'afterEnd',
+    newScript
+  )
+}
 
-registerDep('lodash', () => {
-  const lodash = require('lodash')
-  return { default: lodash }
-})
+const devDependencies = {
+  imports: {
+    react: 'https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.development.js',
+    'react-dom': 'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.development.js',
+    'react-dom/server': 'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom-server.browser.development.js',
+    'single-spa': 'https://unpkg.com/single-spa@4.3.2/lib/umd/single-spa.min.js',
+    lodash: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js',
+    rxjs: 'https://unpkg.com/rxjs@6.4.0/bundles/rxjs.umd.js',
+  }
+}
 
-// See https://rxjs.dev/guide/v6/migration for Import Paths explanation
-registerDep('rxjs', () => require('rxjs'))
-registerDep('rxjs/operators', () => require('rxjs/operators'))
+const prodDependencies = {
+  imports: {
+    react: 'https://cdnjs.cloudflare.com/ajax/libs/react/16.8.6/umd/react.production.min.js',
+    'react-dom': 'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom.production.min.js',
+    'react-dom/server': 'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.6/umd/react-dom-server.browser.production.min.js',
+    'single-spa': 'https://unpkg.com/single-spa@4.3.2/lib/umd/single-spa.min.js',
+    lodash: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js',
+    rxjs: 'https://unpkg.com/rxjs@6.4.0/bundles/rxjs.umd.min.js',
+  }
+}
 
-registerDep('single-spa', () => require('single-spa'))
-registerDep('react', () => require('react'))
-registerDep('react-dom', () => require('react-dom'))
-registerDep('react-dom/server', () => require('react-dom/server'))
-
-function registerDep(name, requirer) {
-  window.System.set(name, requirer())
+const devMode = true // you will need to figure out a way to use a set of production dependencies instead
+if (devMode) {
+  insertNewImportMap(devDependencies)
+} else {
+  insertNewImportMap(prodDependencies)
 }

@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react'
 import AsyncDecorator from 'async-decorator/rx6'
 import { getPlanet } from '../../utils/api.js'
-import { pipe, from } from 'rxjs'
-import { flatMap, tap } from 'rxjs/operators'
+import { pipe, from, operators } from 'rxjs'
+const { flatMap, tap } = operators
 import { Link } from 'react-router-dom'
 
 @AsyncDecorator

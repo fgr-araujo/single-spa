@@ -29,15 +29,7 @@
   },
   "author": "Justin McMurdie",
   "license": "ISC",
-  "dependencies": {
-    "lodash": "^4.17.11",
-    "react": "16.7.0",
-    "react-dom": "16.7.0",
-    "rxjs": "6.2.2",
-    "single-spa": "4.0.1",
-    "sofe": "2.1.4",
-    "systemjs": "^3.1.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-syntax-dynamic-import": "7.0.0",

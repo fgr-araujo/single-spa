@@ -18,12 +18,6 @@ module.exports = {
       __dirname,
       'node_modules',
     ],
-    alias: {
-      // Only put things in here when webpack isn't already doing the "right" thing for performance by default.
-      // This is usually when there is a preminified file that the npm package publishes but webpack doesn't know
-      // it should use.
-      lodash: path.resolve(__dirname, 'node_modules/lodash/lodash.min.js'),
-    }
   },
   devtool: 'sourcemap',
   plugins: [

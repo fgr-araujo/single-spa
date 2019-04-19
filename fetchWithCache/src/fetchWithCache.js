@@ -1,5 +1,5 @@
-import { from, pipe } from 'rxjs'
-import { pluck, tap, map } from 'rxjs/operators'
+import { from, operators } from 'rxjs'
+const { pluck, tap, map } = operators
 import axios from 'axios'
 import addId from './addId.js'
 
