@@ -24,3 +24,13 @@ npm 6.1.0
 
 ## Current Services
 1. fetchWithCache
+
+# Why `!sofe`
+I'm using webpack (a static module bundler) to build each application for our micro-frontend approach. Webpack requires
+access to everything it needs to include in the bundle at build time. This means when an app that imports a service,
+for example planets importing the fetchWithCache service, webpack will try to bundle the service into the planets bundle.
+The built in way to avoid webpack doing this is [webpack externals](https://webpack.js.org/configuration/externals/), 
+using externals works really well but to avoid having to include a regex for each service I'm using the postfix to signal 
+to webpack (and developers) that the import is another micro-app/service/front-end. Sofe for Service Oriented Front-End, 
+it isn't required if you would rather include a different postfix or none at all it should work, you'll just have to 
+modify each webpack config for externals.
