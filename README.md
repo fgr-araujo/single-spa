@@ -25,7 +25,9 @@ npm 6.1.0
 ## Current Services
 1. fetchWithCache
 
-# Why `!sofe`
+# Notes
+
+## Why `!sofe`
 I'm using webpack (a static module bundler) to build each application for our micro-frontend approach. Webpack requires
 access to everything it needs to include in the bundle at build time. This means when an app that imports a service,
 for example planets importing the fetchWithCache service, webpack will try to bundle the service into the planets bundle.
@@ -34,3 +36,11 @@ using externals works really well but to avoid having to include a regex for eac
 to webpack (and developers) that the import is another micro-app/service/front-end. Sofe for Service Oriented Front-End, 
 it isn't required if you would rather include a different postfix or none at all it should work, you'll just have to 
 modify each webpack config for externals.
+
+## Code splitting
+Code splitting is a complicated topic. I'm not going to dive into each facet of it within Webpack, see [Webpacks docs for 
+that](https://webpack.js.org/guides/code-splitting/).
+
+In our project code splitting is further complicated because webpack's module format expects to load more modules from 
+the website root, which will always fail in this project unless webpack is told where to load additional modules. Right
+now there is a single example of this, [done in the people application](./people/src/people.js).
