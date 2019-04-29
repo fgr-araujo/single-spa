@@ -28,7 +28,7 @@ export default {
   data: () => ({
     newTodo: '',
     allTodos: [
-      {id: 1, done: false, name: 'pooop'},
+      {id: 1, done: false, name: 'sleep'},
       {id: 2, done: false, name: 'eat'},
       {id: 3, done: true, name: 'walk'},
     ],
