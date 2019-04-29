@@ -11,5 +11,5 @@ export default function setPublicPath() {
 }
 
 function getUrl () {
-  return window.System.resolve('people!sofe')
+  return window.System.resolve('@portal/people')
 }

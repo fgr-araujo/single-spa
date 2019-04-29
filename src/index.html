@@ -10,11 +10,11 @@
     <script type="systemjs-importmap">
       {
         "imports": {
-          "config!sofe": "http://localhost:8233/config.js",
-          "navbar!sofe": "http://localhost:8235/navbar.js",
-          "people!sofe": "http://localhost:8236/people.js",
-          "planets!sofe": "http://localhost:8237/planets.js",
-          "fetchWithCache!sofe": "http://localhost:8238/fetchWithCache.js"
+          "@portal/config": "http://localhost:8233/config.js",
+          "@portal/navbar": "http://localhost:8235/navbar.js",
+          "@portal/people": "http://localhost:8236/people.js",
+          "@portal/planets": "http://localhost:8237/planets.js",
+          "@portal/fetchWithCache": "http://localhost:8238/fetchWithCache.js"
         }
       }
     </script>
@@ -27,7 +27,7 @@
 
     <!-- Load the application -->
     <script>
-      System.import('config!sofe')
+      System.import('@portal/config')
     </script>
 
     <!-- Static navbar -->

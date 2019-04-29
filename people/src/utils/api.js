@@ -1,4 +1,4 @@
-import fetchWithCache from 'fetchWithCache!sofe'
+import fetchWithCache from '@portal/fetchWithCache'
 
 export function getPeople(pageNum = 1) {
   return fetchWithCache(`people/?page=${pageNum}`)
