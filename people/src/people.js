@@ -1,16 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
-import RootComponent from './root.component.js'
+import { property } from 'lodash'
+import setPublicPath from './set-public-path.js'
 
 const reactLifecycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: RootComponent,
+  loadRootComponent: () => import(/* webpackChunkName: "people-app" */'./root.component.js').then(property('default')),
   domElementGetter,
 })
 
 export const bootstrap = [
+  () => {
+    return setPublicPath()
+  },
   reactLifecycles.bootstrap,
 ]
 

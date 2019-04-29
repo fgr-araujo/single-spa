@@ -39,7 +39,11 @@ module.exports = {
   ],
   devtool: 'source-map',
   externals: [
-    /^.+!sofe$/,
+    /^planets$/,
+    /^people/,
+    /^navbar/,
+    /^fetchWithCache/,
+    /^config/,
     /^lodash$/,
     /^single-spa$/,
     /^rxjs\/?.*$/,

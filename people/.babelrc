@@ -12,5 +12,6 @@
         "legacy": true
       }
     ],
+    "@babel/plugin-syntax-dynamic-import",
   ]
 }
