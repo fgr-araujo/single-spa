@@ -43,4 +43,4 @@ that](https://webpack.js.org/guides/code-splitting/).
 
 In our project code splitting is further complicated because webpack's module format expects to load more modules from 
 the website root, which will always fail in this project unless webpack is told where to load additional modules. Right
-now there is a single example of this, [done in the people application](./people/src/people.js).
+now there is a single example of this, [done in the people application](./people/src/people.js#L10).
